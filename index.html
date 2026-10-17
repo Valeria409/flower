@@ -50,7 +50,8 @@
   .hero h1 .green-slogan{color:#8fae96;background:linear-gradient(120deg,#b1d4ba,#8cb394);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   .hero p{font-size:1.15rem;color:#6d5b60;margin-bottom:32px;max-width:500px;font-weight:300}
   .hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-  .hero-image{flex:1 1 340px;min-height:280px;background:var(--rose-soft);border-radius:42% 58% 38% 62%/54% 40% 60% 46%;display:flex;align-items:center;justify-content:center;font-size:4rem;box-shadow:var(--shadow);transition:border-radius .5s var(--ease)}
+  .hero-image{flex:1 1 340px;min-height:280px;background:var(--rose-soft);border-radius:42% 58% 38% 62%/54% 40% 60% 46%;display:flex;align-items:center;justify-content:center;font-size:4rem;box-shadow:var(--shadow);transition:border-radius .5s var(--ease);overflow:hidden}
+  .hero-image img{width:100%;height:100%;object-fit:cover;display:block}
   @media (max-width:768px){.hero-image{border-radius:40px}}
 
   /* ABOUT */
@@ -79,7 +80,8 @@
   .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px}
   .product-card{background:#fff;border-radius:var(--radius);padding:18px 16px 20px;box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s;border:1px solid #f7ecee;display:flex;flex-direction:column}
   @media (hover:hover){.product-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover);border-color:var(--rose-soft)}}
-  .product-img{width:100%;aspect-ratio:4/3;background:linear-gradient(145deg,#f7e7ea,#f0dbdf);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:4.2rem;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+  .product-img{width:100%;aspect-ratio:4/3;background:linear-gradient(145deg,#f7e7ea,#f0dbdf);border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
+  .product-img img{width:100%;height:100%;object-fit:cover;display:block}
   .product-card h3{font-size:1.15rem;font-weight:500;color:#3f2e32;margin-bottom:4px}
   .product-meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.8rem;color:#7a6268;margin:6px 0 10px}
   .product-meta span{background:#faf3f5;padding:2px 10px;border-radius:30px}
@@ -94,7 +96,8 @@
   .cart-wrapper{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
   .cart-items{flex:2 1 380px}
   .cart-item{display:flex;gap:14px;background:#fff;border-radius:22px;padding:16px 18px;margin-bottom:14px;align-items:center;box-shadow:0 6px 16px rgba(220,195,200,.2);border:1px solid #f5e7ea;flex-wrap:wrap}
-  .cart-item-emoji{font-size:2rem;background:var(--rose-soft);width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:16px;flex-shrink:0}
+  .cart-item-emoji{font-size:2rem;background:var(--rose-soft);width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:16px;flex-shrink:0;overflow:hidden}
+  .cart-item-emoji img{width:100%;height:100%;object-fit:cover;display:block}
   .cart-item-info{flex:1;min-width:120px}
   .cart-item-info h4{font-weight:500;color:#4a373b;font-size:1rem}
   .cart-item-info p{color:#9d8088;font-size:.85rem}
@@ -228,7 +231,7 @@
         <a href="#delivery" class="btn btn-outline">О доставке</a>
       </div>
     </div>
-    <div class="hero-image">🌸</div>
+    <div class="hero-image"><img src="images/букет 1.jpg" alt="Нежный букет"></div>
   </div>
 </section>
 
@@ -343,347 +346,14 @@
       <div class="delivery-info">
         <p style="color:#5b4b4f;font-weight:300">Доставляем по городу в течение 2 часов. Оплата картой, наличными или переводом.</p>
         <ul>
-          <li><span></span> Курьером — от 300 ₽, в день заказа</li>
-          <li><span></span> Самовывоз из мастерской — бесплатно</li>
-          <li><span></span> Оплата картой онлайн или при получении</li>
-          <li><span></span> Бережная упаковка и открытка в подарок</li>
+          <li><span>🚚</span> Курьером — от 300 ₽, в день заказа</li>
+          <li><span>🏪</span> Самовывоз из мастерской — бесплатно</li>
+          <li><span>💳</span> Оплата картой онлайн или при получении</li>
+          <li><span>🎁</span> Бережная упаковка и открытка в подарок</li>
         </ul>
       </div>
       <div class="tracker">
         <h3>🚗 Отслеживание заказа</h3>
         <form class="tracker-input" id="tracker-form">
           <label for="tracker-code" style="position:absolute;left:-9999px">Номер заказа</label>
-          <input id="tracker-code" placeholder="Введите номер заказа" required>
-          <button type="submit" class="btn btn-small">Отследить</button>
-        </form>
-        <div class="tracker-progress" id="tracker-progress" role="status" aria-live="polite">
-          Введите номер — покажем статус доставки
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews">
-  <div class="container">
-    <h2>Отзывы <span class="accent">клиентов</span></h2>
-    <div class="reviews-grid" id="reviews-grid"></div>
-
-    <form class="add-review" id="review-form">
-      <h3>Оставьте отзыв 📧</h3>
-      <div class="review-form">
-        <input type="text" name="name" placeholder="Ваше имя" required>
-        <select name="rating" required>
-          <option value="">Оценка</option>
-          <option value="5">★★★★★</option>
-          <option value="4">★★★★</option>
-          <option value="3">★★★</option>
-          <option value="2">★★</option>
-          <option value="1">★</option>
-        </select>
-        <textarea name="text" placeholder="Ваш отзыв…" required></textarea>
-        <button type="submit" class="btn btn-small">Отправить</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- ARTICLES -->
-<section id="articles" style="background:#fdf8f9">
-  <div class="container">
-    <h2>Полезные <span class="accent">статьи</span></h2>
-    <div class="articles-grid" id="articles-grid"></div>
-  </div>
-</section>
-
-<!-- CONTACTS -->
-<section id="contacts">
-  <div class="container">
-    <h2>Наши <span class="accent">контакты</span></h2>
-    <div class="contacts-flex">
-      <div class="contact-info">
-        <a href="tel:+79991234567" class="contact-item"><span class="ico">📞</span> +7 (999) 123-45-67</a>
-        <div class="contact-item"><span class="ico">🏠</span> г. Москва, ул. Цветочная, 12</div>
-        <div class="contact-item"><span class="ico">🕐</span> Ежедневно с 9:00 до 21:00</div>
-        <div class="contact-item"><span class="ico">📬</span> hello@flowers-happy.ru</div>
-        <div class="social-links">
-          <a href="#" aria-label="Telegram">✈️</a>
-          <a href="#" aria-label="WhatsApp">🖋</a>
-          <a href="#" aria-label="Instagram">🌈</a>
-          <a href="#" aria-label="VK">📘</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">© 2026 «Счастье в цветах». Сделано с любовью </div>
-</footer>
-
-<div class="toast" id="toast"></div>
-
-<script>
-/* ============ ДАННЫЕ ============ */
-const PRODUCTS = [
-  {id:1,name:'Нежный рассвет',emoji:'🌻',price:2900,cat:'mono',occasion:'birthday',color:'pink',compose:'tulips',size:'M'},
-  {id:2,name:'Розовая дымка',emoji:'🌸',price:4500,cat:'romance',occasion:'wedding',color:'pink',compose:'roses',size:'L'},
-  {id:3,name:'Белое облако',emoji:'☁',price:3200,cat:'mixed',occasion:'just',color:'white',compose:'mix',size:'M'},
-  {id:4,name:'Весенний сад',emoji:'🏡',price:3700,cat:'mixed',occasion:'march8',color:'pink',compose:'peonies',size:'L'},
-  {id:5,name:'Красное сердце',emoji:'❤️',price:5200,cat:'romance',occasion:'wedding',color:'red',compose:'roses',size:'L'},
-  {id:6,name:'Зелёный бриз',emoji:'💚',price:2400,cat:'mono',occasion:'just',color:'green',compose:'mix',size:'S'},
-  {id:7,name:'Пионовый рай',emoji:'🌺',price:6100,cat:'basket',occasion:'birthday',color:'pink',compose:'peonies',size:'L'},
-  {id:8,name:'Пастельный сон',emoji:'🛌',price:1800,cat:'mono',occasion:'march8',color:'white',compose:'tulips',size:'S'},
-];
-
-const REVIEWS = [
-  {name:'Марина',rating:5,text:'Заказывала букет маме — просто чудо! Свежайшие пионы, приятная упаковка.'},
-  {name:'Алексей',rating:5,text:'Доставили за час, курьер вежливый, цветы как на фото. Рекомендую.'},
-  {name:'Ольга',rating:4,text:'Красиво, но хотелось бы больше вариантов открыток.'},
-];
-
-const ARTICLES = [
-  {icon:'💐',title:'Как выбрать букет',short:'Советы по поводу и настроению',full:'Определите повод: для романтики — розы и пионы, для коллег — лаконичные тюльпаны, для мамы — нежные микс-букеты. Учитывайте любимые цвета получателя и сезон.'},
-  {icon:'🎁',title:'Что подарить на 8 марта',short:'Тренды и классика',full:'Тюльпаны вне конкуренции, но добавьте к ним веточку мимозы или эвкалипта. Мини-букеты в шляпных коробках — практично и красиво.'},
-  {icon:'✂',title:'Уход за срезанными цветами',short:'Продлить жизнь букету',full:'Подрезайте стебли под углом каждые 2 дня, меняйте воду, добавляйте сахар или спецсредство. Держите подальше от фруктов и сквозняков.'},
-  {icon:'👅',title:'Язык цветов',short:'Что символизируют растения',full:'Роза — любовь, пион — счастливая жизнь, тюльпан — признание, лаванда — умиротворение, ромашка — простота и искренность.'},
-];
-
-/* ============ СОСТОЯНИЕ ============ */
-let cart = JSON.parse(localStorage.getItem('flowers-cart') || '[]');
-let cardText = localStorage.getItem('flowers-card') || '';
-let reviews = JSON.parse(localStorage.getItem('flowers-reviews') || 'null') || [...REVIEWS];
-
-let filters = {cat:'all', price:7000, occasion:'all', color:'all', compose:'all', size:'all'};
-
-/* ============ УТИЛИТЫ ============ */
-const $ = (s, p=document) => p.querySelector(s);
-const $$ = (s, p=document) => p.querySelectorAll(s);
-
-function toast(msg){
-  const t = $('#toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(t._t);
-  t._t = setTimeout(()=>t.classList.remove('show'), 2200);
-}
-
-/* ============ КАТАЛОГ ============ */
-function renderProducts(){
-  const grid = $('#product-grid');
-  const filtered = PRODUCTS.filter(p =>
-    (filters.cat==='all' || p.cat===filters.cat) &&
-    p.price <= filters.price &&
-    (filters.occasion==='all' || p.occasion===filters.occasion) &&
-    (filters.color==='all' || p.color===filters.color) &&
-    (filters.compose==='all' || p.compose===filters.compose) &&
-    (filters.size==='all' || p.size===filters.size)
-  );
-
-  if(!filtered.length){
-    grid.innerHTML = '<div class="empty-msg">По вашим фильтрам ничего не нашлось  Попробуйте изменить условия</div>';
-    return;
-  }
-
-  grid.innerHTML = filtered.map(p => {
-    const inCart = cart.some(c => c.id === p.id);
-    return `
-      <div class="product-card">
-        <div class="product-img">${p.emoji}</div>
-        <h3>${p.name}</h3>
-        <div class="product-meta">
-          <span>${p.compose === 'roses' ? 'Розы' : p.compose === 'peonies' ? 'Пионы' : p.compose === 'tulips' ? 'Тюльпаны' : 'Микс'}</span>
-          <span>${p.size}</span>
-        </div>
-        <div class="product-price">${p.price.toLocaleString('ru')} ₽</div>
-        <button type="button" class="add-to-cart ${inCart ? 'in-cart' : ''}" data-id="${p.id}">
-          ${inCart ? '✓ В корзине' : '+ В корзину'}
-        </button>
-      </div>`;
-  }).join('');
-}
-
-$('#category-tabs').addEventListener('click', e => {
-  const btn = e.target.closest('.cat-btn');
-  if(!btn) return;
-  $$('.cat-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  filters.cat = btn.dataset.cat;
-  renderProducts();
-});
-
-$('#f-price').addEventListener('input', e => {
-  filters.price = +e.target.value;
-  $('#price-label').textContent = filters.price.toLocaleString('ru') + ' ₽';
-  renderProducts();
-});
-$('#f-occasion').addEventListener('change', e => { filters.occasion = e.target.value; renderProducts(); });
-$('#f-color').addEventListener('change', e => { filters.color = e.target.value; renderProducts(); });
-$('#f-compose').addEventListener('change', e => { filters.compose = e.target.value; renderProducts(); });
-$('#f-size').addEventListener('change', e => { filters.size = e.target.value; renderProducts(); });
-
-$('#product-grid').addEventListener('click', e => {
-  const btn = e.target.closest('.add-to-cart');
-  if(!btn) return;
-  addToCart(+btn.dataset.id);
-});
-
-/* ============ КОРЗИНА ============ */
-function saveCart(){
-  localStorage.setItem('flowers-cart', JSON.stringify(cart));
-  updateBadge();
-}
-
-function updateBadge(){
-  const total = cart.reduce((s,c)=>s+c.qty, 0);
-  $('#cart-badge').textContent = total;
-}
-
-function addToCart(id){
-  const found = cart.find(c => c.id === id);
-  if(found){ found.qty++; }
-  else { cart.push({id, qty:1}); }
-  saveCart();
-  renderCart();
-  renderProducts();
-  const p = PRODUCTS.find(p=>p.id===id);
-  toast(`«${p.name}» добавлен в корзину `);
-}
-
-function changeQty(id, delta){
-  const item = cart.find(c => c.id === id);
-  if(!item) return;
-  item.qty += delta;
-  if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
-  saveCart();
-  renderCart();
-  renderProducts();
-}
-
-function removeFromCart(id){
-  cart = cart.filter(c => c.id !== id);
-  saveCart();
-  renderCart();
-  renderProducts();
-}
-
-function renderCart(){
-  const box = $('#cart-items');
-  if(!cart.length){
-    box.innerHTML = '<div class="cart-empty">В корзине пока пусто <br><a href="#catalog" class="btn btn-small" style="margin-top:16px;display:inline-flex">Перейти в каталог</a></div>';
-    return;
-  }
-  let total = 0;
-  box.innerHTML = cart.map(c => {
-    const p = PRODUCTS.find(p=>p.id===c.id);
-    total += p.price * c.qty;
-    return `
-      <div class="cart-item">
-        <div class="cart-item-emoji">${p.emoji}</div>
-        <div class="cart-item-info">
-          <h4>${p.name}</h4>
-          <p>${p.price.toLocaleString('ru')} ₽ × ${c.qty}</p>
-        </div>
-        <div class="qty-controls">
-          <button type="button" class="qty-btn" data-id="${p.id}" data-d="-1">−</button>
-          <span>${c.qty}</span>
-          <button type="button" class="qty-btn" data-id="${p.id}" data-d="1">+</button>
-        </div>
-        <div class="cart-item-price">${(p.price * c.qty).toLocaleString('ru')} ₽</div>
-        <button type="button" class="remove-btn" data-remove="${p.id}" aria-label="Удалить">✕</button>
-      </div>`;
-  }).join('') + `<div class="cart-total">Итого: <strong>${total.toLocaleString('ru')} ₽</strong></div>`;
-}
-
-$('#cart-items').addEventListener('click', e => {
-  const qtyBtn = e.target.closest('.qty-btn');
-  if(qtyBtn){ changeQty(+qtyBtn.dataset.id, +qtyBtn.dataset.d); return; }
-  const rmBtn = e.target.closest('.remove-btn');
-  if(rmBtn){ removeFromCart(+rmBtn.dataset.remove); }
-});
-
-$('#card-text').addEventListener('input', e => {
-  cardText = e.target.value;
-});
-$('#save-card').addEventListener('click', () => {
-  localStorage.setItem('flowers-card', cardText);
-  toast('Открытка сохранена ✉️');
-});
-$('#checkout').addEventListener('click', () => {
-  if(!cart.length){ toast('Корзина пуста — добавьте букет '); return; }
-  const total = cart.reduce((s,c)=>{
-    const p = PRODUCTS.find(p=>p.id===c.id); return s + p.price * c.qty;
-  }, 0);
-  toast(`Заказ оформлен на ${total.toLocaleString('ru')} ₽. Спасибо! `);
-  cart = []; saveCart(); renderCart(); renderProducts();
-});
-
-/* ============ ТРЕКЕР ============ */
-$('#tracker-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const code = $('#tracker-code').value.trim();
-  if(code.length < 4){ toast('Введите номер заказа (мин. 4 символа)'); return; }
-  const progress = $('#tracker-progress');
-  const steps = ['Заказ принят', 'Собираем букет', 'Курьер в пути', 'Доставлено'];
-  progress.innerHTML = steps.map((s,i)=>`<div class="step" data-i="${i}"><div class="dot"></div>${s}</div>`).join('');
-  let i = 0;
-  const timer = setInterval(() => {
-    const el = progress.querySelector(`.step[data-i="${i}"]`);
-    if(el) el.classList.add('done');
-    i++;
-    if(i >= steps.length) clearInterval(timer);
-  }, 500);
-});
-
-/* ============ ОТЗЫВЫ ============ */
-function renderReviews(){
-  const grid = $('#reviews-grid');
-  grid.innerHTML = reviews.map(r => `
-    <div class="review-card">
-      <div class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
-      <div class="review-text">«${r.text}»</div>
-      <div class="review-author">— ${r.name}</div>
-    </div>`).join('');
-}
-
-$('#review-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const fd = new FormData(e.target);
-  const name = (fd.get('name')||'').toString().trim();
-  const text = (fd.get('text')||'').toString().trim();
-  const rating = +fd.get('rating');
-  if(!name || !text || !rating){ toast('Заполните все поля отзыва'); return; }
-  reviews.unshift({name, text, rating});
-  localStorage.setItem('flowers-reviews', JSON.stringify(reviews));
-  renderReviews();
-  e.target.reset();
-  toast('Спасибо за отзыв! ');
-});
-
-/* ============ СТАТЬИ ============ */
-function renderArticles(){
-  $('#articles-grid').innerHTML = ARTICLES.map((a,i) => `
-    <div class="article-card" data-i="${i}">
-      <div class="article-icon">${a.icon}</div>
-      <h4>${a.title}</h4>
-      <p>${a.short}</p>
-      <div class="article-full">${a.full}</div>
-    </div>`).join('');
-}
-
-$('#articles-grid').addEventListener('click', e => {
-  const card = e.target.closest('.article-card');
-  if(card) card.classList.toggle('expanded');
-});
-
-/* ============ ИНИЦИАЛИЗАЦИЯ ============ */
-renderProducts();
-renderCart();
-renderReviews();
-renderArticles();
-updateBadge();
-$('#card-text').value = cardText;
-</script>
-</body>
-</html>
+          <input id="tracker-code" placeholder="Введите номер заказа" required
